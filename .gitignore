@@ -39,7 +39,7 @@
 
 # Dependency directories
 node_modules/
-config/config.env
+# config/config.env
 # jspm_packages/
 
 # # Snowpack dependency directory (https://snowpack.dev/)
