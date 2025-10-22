@@ -8,6 +8,7 @@ dotenv.config({ path: "./config/config.env" });
 // Route files
 const bootcamps = require("./routes/bootcamps");
 const course = require("./routes/course");
+const auth = require("./routes/auth");
 const errorHandler = require("./middleware/error");
 
 // Connect to database
@@ -27,6 +28,9 @@ if (process.env.NODE_ENV === "development") {
 // Mount routers
 app.use("/api/v1/bootcamps", bootcamps);
 app.use("/api/v1/course", course);
+app.use("/api/v1/auth", auth);
+
+// Error handler middleware
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
