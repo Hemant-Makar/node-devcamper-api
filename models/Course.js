@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const CourseSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -22,7 +22,7 @@ const CourseSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Please add a tuition cost"],
   },
-  minimumSkills: {
+  minimumSkill: {
     type: String,
     required: [true, "Please add minimum skills"],
     enum: ["beginner", "intermediate", "advanced"],
@@ -41,4 +41,5 @@ const CourseSchema = new mongoose.Schema({
     required: true,
   },
 });
-export default mongoose.model("Course", CourseSchema);
+
+module.exports = mongoose.model("Course", CourseSchema);
